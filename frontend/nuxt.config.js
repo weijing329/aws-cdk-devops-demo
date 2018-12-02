@@ -16,6 +16,12 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   /*
+  ** Environment variables that will be shared for the client and server-side
+  */
+  env: {
+    apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:3000/api',
+  },
+  /*
   ** Build configuration
   */
   build: {

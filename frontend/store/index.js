@@ -1,3 +1,5 @@
+const urljoin = require('url-join')
+
 export const state = () => ({
   ipInfo: {},
 })
@@ -10,9 +12,8 @@ export const mutations = {
 
 export const actions = {
   async fetchIpInfo({ commit }) {
-    const ipInfo = await this.$axios.$get(
-      'https://api.weijing329.studio/demo/ip'
-    )
+    const apiURL = urljoin(process.env.apiBaseUrl, '/ip')
+    const ipInfo = await this.$axios.$get(apiURL)
     commit('setIpInfo', ipInfo)
   },
 }

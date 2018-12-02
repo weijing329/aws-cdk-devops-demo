@@ -13,6 +13,9 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "generate:development": "env-cmd .env.development yarn generate",
+    "generate:staging": "env-cmd .env.staging yarn generate",
+    "generate:production": "env-cmd .env.production yarn generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "awsLogin": "aws configure",
@@ -25,10 +28,12 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "url-join": "^4.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
+    "env-cmd": "^8.0.2",
     "eslint": "^4.19.1",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.1.1",
