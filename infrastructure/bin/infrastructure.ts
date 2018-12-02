@@ -19,11 +19,11 @@ class InfrastructureStack extends cdk.Stack {
 }
 
 const app = new cdk.App();
-new InfrastructureStack(app, 'TestingStack', {
+new InfrastructureStack(app, 'aws-cdk-devops-demo-infrastructure-testing', {
   domainName: 'weijing329.studio',
   frontendSubDomain: 'test'
 });
-new InfrastructureStack(app, 'ProductionStack', {
+new InfrastructureStack(app, 'aws-cdk-devops-demo-infrastructure-production', {
   domainName: 'weijing329.studio',
   frontendSubDomain: 'live'
 });

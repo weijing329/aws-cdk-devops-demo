@@ -14,8 +14,8 @@
         "synth": "cdk synth -o synth",
         "prediff": "yarn build",
         "diff": "cdk diff",
-        "diff:testing": "yarn diff TestingStack",
-        "diff:production": "yarn diff ProductionStack",
+        "diff:testing": "yarn diff aws-cdk-devops-demo-infrastructure-testing",
+        "diff:production": "yarn diff aws-cdk-devops-demo-infrastructure-production",
         "predeploy": "yarn build",
         "deploy": "cdk deploy"
     },
