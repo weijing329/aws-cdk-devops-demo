@@ -1,0 +1,37 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "王維靖 <weijing329@outlook.com>",
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 10.13 <11"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "awsLogin": "aws configure",
+    "s3CreateBucket": "aws s3api create-bucket --bucket demo.weijing329.studio --region ap-northeast-1 --create-bucket-configuration LocationConstraint=ap-northeast-1",
+    "s3EnableWebsite": "aws s3 website s3://demo.weijing329.studio --index-document",
+    "s3EnableVersioning": "aws s3api put-bucket-versioning --bucket demo.weijing329.studio --versioning-configuration Status=Enabled",
+    "s3UpdatePolicy": "aws s3api put-bucket-policy --bucket demo.weijing329.studio --policy file://policy.json",
+    "s3UploadSite": "aws s3 cp dist s3://demo.weijing329.studio --recursive",
+    "publish": "npm run generate && npm run s3UploadSite"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}

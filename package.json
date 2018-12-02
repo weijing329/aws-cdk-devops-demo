@@ -2,5 +2,15 @@
   "name": "aws-cdk-devops-demo",
   "version": "1.0.0",
   "license": "MIT",
-  "scripts": {}  
+  "author": "王維靖 <weijing329@outlook.com>",
+  "private": true,
+  "workspaces": [
+    "frontend", 
+    "bakcend", 
+    "devops-cdk",
+    "devops-pipelines"
+  ],
+  "scripts": {
+    "frontend:dev": "yarn workspace frontend dev"
+  }  
 }
