@@ -1,16 +1,20 @@
 {
   "name": "aws-cdk-devops-demo",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "author": "王維靖 <weijing329@outlook.com>",
   "private": true,
   "workspaces": [
     "frontend", 
     "bakcend", 
-    "devops-cdk",
-    "devops-pipelines"
+    "infrastructure",
+    "pipelines"
   ],
   "scripts": {
-    "frontend:dev": "yarn workspace frontend dev"
+    "frontend:dev": "yarn workspace frontend dev",
+    "awsLogin": "aws configure",
+    "infrastructure:synth": "yarn workspace infrastructure synth",
+    "infrastructure:diff:testing": "yarn workspace infrastructure diff:testing",
+    "infrastructure:diff:production": "yarn workspace infrastructure diff:production"
   }  
 }

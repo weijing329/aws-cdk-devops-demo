@@ -9,16 +9,23 @@
     "scripts": {
         "build": "tsc",
         "watch": "tsc -w",
-        "cdk": "cdk"
+        "cdk": "cdk",
+        "presynth": "yarn build",
+        "synth": "cdk synth -o synth",
+        "prediff": "yarn build",
+        "diff": "cdk diff",
+        "diff:testing": "yarn diff TestingStack",
+        "diff:production": "yarn diff ProductionStack",
+        "deploy": "cdk deplay"
     },
     "devDependencies": {
         "@types/node": "^8.9.4",
-        "typescript": "^3.1.2",
-        "aws-cdk": "^0.18.1"
+        "aws-cdk": "^0.18.1",
+        "typescript": "^3.1.2"
     },
     "dependencies": {
-        "@aws-cdk/aws-sns": "^0.18.1",
-        "@aws-cdk/aws-sqs": "^0.18.1",
+        "@aws-cdk/aws-cloudfront": "^0.18.1",
+        "@aws-cdk/aws-route53": "^0.18.1",
         "@aws-cdk/cdk": "^0.18.1"
     }
 }

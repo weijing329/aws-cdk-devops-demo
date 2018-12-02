@@ -1,24 +1,30 @@
 #!/usr/bin/env node
-import sns = require('@aws-cdk/aws-sns');
-import sqs = require('@aws-cdk/aws-sqs');
 import cdk = require('@aws-cdk/cdk');
+import { Frontend } from './Construct/frontend';
+
+interface InfrastructureStackProps extends cdk.StackProps {
+  domainName: string;
+  frontendSubDomain: string;
+}
 
 class InfrastructureStack extends cdk.Stack {
-  constructor(parent: cdk.App, name: string, props?: cdk.StackProps) {
+  constructor(parent: cdk.App, name: string, props: InfrastructureStackProps) {
     super(parent, name, props);
 
-    const queue = new sqs.Queue(this, 'InfrastructureQueue', {
-      visibilityTimeoutSec: 300
+    new Frontend(this, 'Frontend', {
+      domainName: props.domainName,
+      siteSubDomain: props.frontendSubDomain
     });
-
-    const topic = new sns.Topic(this, 'InfrastructureTopic');
-
-    topic.subscribeQueue(queue);
   }
 }
 
 const app = new cdk.App();
-
-new InfrastructureStack(app, 'InfrastructureStack');
-
+new InfrastructureStack(app, 'TestingStack', {
+  domainName: 'weijing329.studio',
+  frontendSubDomain: 'test'
+});
+new InfrastructureStack(app, 'ProductionStack', {
+  domainName: 'weijing329.studio',
+  frontendSubDomain: 'live'
+});
 app.run();

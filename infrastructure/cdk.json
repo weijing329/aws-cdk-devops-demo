@@ -1,3 +1,11 @@
 {
-    "app": "node bin/infrastructure.js"
+  "app": "node bin/infrastructure.js",
+  "context": {
+    "ssm:account=621785183737:parameterName=CertificateArn-test.weijing329.studio:region=us-east-1": "arn:aws:acm:us-east-1:621785183737:certificate/5b281c5d-7885-4428-a984-65a7b1f9a3a4",
+    "hosted-zone:account=621785183737:domainName=weijing329.studio:region=us-east-1": {
+      "Id": "/hostedzone/Z3KYV3KPNSQZN1",
+      "Name": "weijing329.studio."
+    },
+    "ssm:account=621785183737:parameterName=CertificateArn-live.weijing329.studio:region=us-east-1": "arn:aws:acm:us-east-1:621785183737:certificate/5b281c5d-7885-4428-a984-65a7b1f9a3a4"
+  }
 }

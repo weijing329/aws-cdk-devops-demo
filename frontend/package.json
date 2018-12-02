@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Nuxt.js project",
   "author": "王維靖 <weijing329@outlook.com>",
   "engineStrict": true,
