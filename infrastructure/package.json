@@ -16,7 +16,8 @@
         "diff": "cdk diff",
         "diff:testing": "yarn diff TestingStack",
         "diff:production": "yarn diff ProductionStack",
-        "deploy": "cdk deplay"
+        "predeploy": "yarn build",
+        "deploy": "cdk deploy"
     },
     "devDependencies": {
         "@types/node": "^8.9.4",
