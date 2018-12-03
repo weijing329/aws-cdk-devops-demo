@@ -7,17 +7,17 @@ import { GithubSource } from './Construct/GithubSource';
 import { CloudFormationCodeBuildProject } from './Construct/CloudFormationCodeBuildProject';
 import { CloudFormationTemplateApply } from './Construct/CloudFormationTemplateApply';
 
+const mainProjectName = 'aws-cdk-devops-demo';
+const deployResourceName = 'infrastructure';
+const sourceCodeDirectory = 'infrastructure';
+
 class InfrastructureProvistioningPipelineStack extends cdk.Stack {
     constructor(parent: cdk.App, name: string, props?: cdk.StackProps) {
         super(parent, name, props);
 
-        const pipelineName = 'infrastructure-provisioning';
-        const stackName = 'Infrastructure';
-        const sourceCodeDirectory = 'infrastructure';
-
         // Pipeline
         const pipeline = new codepipeline.Pipeline(this, 'Pipeline', { 
-            pipelineName: `aws-cdk-devops-demo-${pipelineName}`
+            pipelineName: `${mainProjectName}-${deployResourceName}`
         });
 
         pipeline.addToRolePolicy(new iam.PolicyStatement()
@@ -35,19 +35,19 @@ class InfrastructureProvistioningPipelineStack extends cdk.Stack {
         const buildProject = new CloudFormationCodeBuildProject(this, 'BuildProject', {
             pipeline,
             github,
-            stackName,
             directory: sourceCodeDirectory
         });
 
         // Template Apply
         new CloudFormationTemplateApply(this, 'TemplateApply', {
+            mainProjectName,
             pipeline,
             buildProject,
-            stackName
+            deployResourceName
         });
     }
 }
 
 const app = new cdk.App();
-new InfrastructureProvistioningPipelineStack(app, 'aws-cdk-devops-demo-infrastructure-provisioning-stack');
+new InfrastructureProvistioningPipelineStack(app, `${mainProjectName}-infrastructure-provisioning-pipeline`);
 app.run();

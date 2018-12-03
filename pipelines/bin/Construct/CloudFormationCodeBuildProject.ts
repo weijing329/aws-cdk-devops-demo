@@ -9,7 +9,6 @@ import { GithubSource } from './GithubSource';
 export interface CloudFormationCodeBuildProjectProps {
     pipeline: codepipeline.Pipeline;
     github: GithubSource;
-    stackName: string;
     directory: string;
 }
 
