@@ -12,12 +12,41 @@
     source-map-support "^0.5.6"
     yaml "^1.0.1"
 
+"@aws-cdk/assets@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/assets/-/assets-0.18.1.tgz#89f6e5653c68fbed4f439b80661eba41e876e4d2"
+  integrity sha512-8BaWSXXEKelBK+91eLVN+GDWQLWSEEoYT7/9yY5UkNLqvgkY0BloKnob13iiPE3Vf7k2Jt3pKaeAz24hgoqAqg==
+  dependencies:
+    "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/aws-s3" "^0.18.1"
+    "@aws-cdk/cdk" "^0.18.1"
+    "@aws-cdk/cx-api" "^0.18.1"
+
+"@aws-cdk/aws-autoscaling-api@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-autoscaling-api/-/aws-autoscaling-api-0.18.1.tgz#947c8ccd35393a41bc4fe1bb696fb4fe0a7303a4"
+  integrity sha512-UVwRPrHB1HFOSnpGKOxt2dj6dHj0FmI5MSPnaA1TYytQ8S4Kc9l1acJKsPruqJN+znnho8kn2FB1DmIvRxOpOw==
+  dependencies:
+    "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/cdk" "^0.18.1"
+
 "@aws-cdk/aws-certificatemanager@^0.18.1":
   version "0.18.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-certificatemanager/-/aws-certificatemanager-0.18.1.tgz#56d3c593f821f9f81d5cd49953714d9d3d686a26"
   integrity sha512-YC/NVsDwf8+ybUow/YomhMQFy65fgZ6AOQRgjeNIpAHEOBNibInsFi03ULljKIUQ+eSx70p9sjVmDdFo0kBmfg==
   dependencies:
     "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/cdk" "^0.18.1"
+
+"@aws-cdk/aws-cloudformation@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-cloudformation/-/aws-cloudformation-0.18.1.tgz#f592bd0de7553c82b0f9650e2f7227fe3eb02dc9"
+  integrity sha512-p7YrXRGdxZgZpi1iWEskrODyYAgpMdricyPHW2JUxB/KUvVcmuuGCqnVKwlMNu/cV2/XYZ6s7oTnJ7jq9aynkQ==
+  dependencies:
+    "@aws-cdk/aws-codepipeline-api" "^0.18.1"
+    "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/aws-lambda" "^0.18.1"
+    "@aws-cdk/aws-sns" "^0.18.1"
     "@aws-cdk/cdk" "^0.18.1"
 
 "@aws-cdk/aws-cloudfront@^0.18.1":
@@ -40,6 +69,31 @@
     "@aws-cdk/aws-iam" "^0.18.1"
     "@aws-cdk/cdk" "^0.18.1"
 
+"@aws-cdk/aws-codebuild@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-codebuild/-/aws-codebuild-0.18.1.tgz#966d784ae9bd2c56b5e16178e579c5bc699be22b"
+  integrity sha512-AXlVFcKcGGq6iKUUFcxLpODlwLrcve2NsL71gRvYt1k5M0PNmXFKBc2/CKtNXFdP+5A3Utok13TjWUpKySk/Hg==
+  dependencies:
+    "@aws-cdk/assets" "^0.18.1"
+    "@aws-cdk/aws-cloudwatch" "^0.18.1"
+    "@aws-cdk/aws-codecommit" "^0.18.1"
+    "@aws-cdk/aws-codepipeline-api" "^0.18.1"
+    "@aws-cdk/aws-events" "^0.18.1"
+    "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/aws-kms" "^0.18.1"
+    "@aws-cdk/aws-s3" "^0.18.1"
+    "@aws-cdk/cdk" "^0.18.1"
+
+"@aws-cdk/aws-codecommit@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-codecommit/-/aws-codecommit-0.18.1.tgz#46545a6ed0c82590493999205bb3dc3746a5d994"
+  integrity sha512-XU50j9Wng2RaZWqw6kt5W/Z1RWlkgsQlZoBLWAjKZaldxcAB5mbrlQTZNgqKygfGbd9PG20u65Q0ajm6mtc6zQ==
+  dependencies:
+    "@aws-cdk/aws-codepipeline-api" "^0.18.1"
+    "@aws-cdk/aws-events" "^0.18.1"
+    "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/cdk" "^0.18.1"
+
 "@aws-cdk/aws-codepipeline-api@^0.18.1":
   version "0.18.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-codepipeline-api/-/aws-codepipeline-api-0.18.1.tgz#eeaba83d9e74a0e96cf662f0d354fadfb23c55a2"
@@ -47,6 +101,17 @@
   dependencies:
     "@aws-cdk/aws-events" "^0.18.1"
     "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/cdk" "^0.18.1"
+
+"@aws-cdk/aws-codepipeline@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-codepipeline/-/aws-codepipeline-0.18.1.tgz#e733e98e26c849e5e7b6edb8187599b709e7ebc3"
+  integrity sha512-jndCiWnA5ssVP64wregLs3/KpFvpa9QGywKmd0iOatLeOLaID5JtrfkD7Ppp2BkY5N7i/5DsX6AwzURmx+6obg==
+  dependencies:
+    "@aws-cdk/aws-codepipeline-api" "^0.18.1"
+    "@aws-cdk/aws-events" "^0.18.1"
+    "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/aws-s3" "^0.18.1"
     "@aws-cdk/cdk" "^0.18.1"
 
 "@aws-cdk/aws-ec2@^0.18.1":
@@ -80,6 +145,25 @@
   dependencies:
     "@aws-cdk/aws-iam" "^0.18.1"
     "@aws-cdk/cdk" "^0.18.1"
+
+"@aws-cdk/aws-lambda@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda/-/aws-lambda-0.18.1.tgz#07ba56e0f37ffdf727b81dff4c391b3d3359957f"
+  integrity sha512-WopukHFiDuxZcYACPmTSYRR/ngAa5zDb/kFQFmNu2x3HT/TN6WmE/BsqZOXgPDJeTq3mvOvf5cYBYSqBittp0A==
+  dependencies:
+    "@aws-cdk/assets" "^0.18.1"
+    "@aws-cdk/aws-cloudwatch" "^0.18.1"
+    "@aws-cdk/aws-codepipeline-api" "^0.18.1"
+    "@aws-cdk/aws-ec2" "^0.18.1"
+    "@aws-cdk/aws-events" "^0.18.1"
+    "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/aws-logs" "^0.18.1"
+    "@aws-cdk/aws-s3" "^0.18.1"
+    "@aws-cdk/aws-s3-notifications" "^0.18.1"
+    "@aws-cdk/aws-sqs" "^0.18.1"
+    "@aws-cdk/aws-stepfunctions" "^0.18.1"
+    "@aws-cdk/cdk" "^0.18.1"
+    "@aws-cdk/cx-api" "^0.18.1"
 
 "@aws-cdk/aws-logs@^0.18.1":
   version "0.18.1"
@@ -116,6 +200,41 @@
     "@aws-cdk/aws-iam" "^0.18.1"
     "@aws-cdk/aws-kms" "^0.18.1"
     "@aws-cdk/aws-s3-notifications" "^0.18.1"
+    "@aws-cdk/cdk" "^0.18.1"
+
+"@aws-cdk/aws-sns@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-sns/-/aws-sns-0.18.1.tgz#4ab9c864d7320ab8e528b6b0cc25d4da6dbcff8c"
+  integrity sha512-en8PjJ7LyNnXzUZ5PTjJujEujYsNy9DpNYFTlr0zR8EActqHJkEE8lKV4WTFlf2fQlcsYfsUScWqtYBir5JwVw==
+  dependencies:
+    "@aws-cdk/aws-autoscaling-api" "^0.18.1"
+    "@aws-cdk/aws-cloudwatch" "^0.18.1"
+    "@aws-cdk/aws-events" "^0.18.1"
+    "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/aws-lambda" "^0.18.1"
+    "@aws-cdk/aws-s3-notifications" "^0.18.1"
+    "@aws-cdk/aws-sqs" "^0.18.1"
+    "@aws-cdk/cdk" "^0.18.1"
+
+"@aws-cdk/aws-sqs@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-sqs/-/aws-sqs-0.18.1.tgz#b7ebef48e7c85d633541e080232061a98cea9426"
+  integrity sha512-6jdojp4vVuHZCti7smi99EKdC7PkUE+UpU4M55H4rApSs6e71zlAk6lXc0BqK0cIBuv5Cg3mKVkSF5CsAQ8Vyg==
+  dependencies:
+    "@aws-cdk/aws-autoscaling-api" "^0.18.1"
+    "@aws-cdk/aws-iam" "^0.18.1"
+    "@aws-cdk/aws-kms" "^0.18.1"
+    "@aws-cdk/aws-s3-notifications" "^0.18.1"
+    "@aws-cdk/cdk" "^0.18.1"
+
+"@aws-cdk/aws-stepfunctions@^0.18.1":
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-stepfunctions/-/aws-stepfunctions-0.18.1.tgz#11b7599a5f6f655b2dde23d31e66bac48e86bda9"
+  integrity sha512-6CA0pTMkWr6QRpf68emryDAc4h+l2ogVvsFapl5RFZ+XenHlEuOMBpQttTZZjWE52HnI4XNCVrXnR/sI5TtRQQ==
+  dependencies:
+    "@aws-cdk/aws-cloudwatch" "^0.18.1"
+    "@aws-cdk/aws-events" "^0.18.1"
+    "@aws-cdk/aws-iam" "^0.18.1"
     "@aws-cdk/cdk" "^0.18.1"
 
 "@aws-cdk/cdk@^0.18.1":

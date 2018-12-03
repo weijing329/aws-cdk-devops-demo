@@ -9,16 +9,29 @@
     "scripts": {
         "build": "tsc",
         "watch": "tsc -w",
-        "cdk": "cdk"
+        "cdk": "cdk",
+        "presynth": "yarn build",
+        "synth": "cdk synth -o synth",
+        "synth:infrastructure": "yarn synth --app 'node bin/infrastructure-provisioning-pipeline.js'",
+        "prediff": "yarn build",
+        "diff": "cdk diff",
+        "diff:infrastructure": "yarn diff --app 'node bin/infrastructure-provisioning-pipeline.js'",
+        "predeploy": "yarn build",
+        "deploy": "cdk deploy",
+        "deploy:infrastructure": "yarn deploy --app 'node bin/infrastructure-provisioning-pipeline.js'"
     },
     "devDependencies": {
         "@types/node": "^8.9.4",
-        "typescript": "^3.1.2",
-        "aws-cdk": "^0.18.1"
+        "aws-cdk": "^0.18.1",
+        "typescript": "^3.1.2"
     },
     "dependencies": {
-        "@aws-cdk/aws-sns": "^0.18.1",
-        "@aws-cdk/aws-sqs": "^0.18.1",
+        "@aws-cdk/aws-cloudformation": "^0.18.1",
+        "@aws-cdk/aws-codebuild": "^0.18.1",
+        "@aws-cdk/aws-codecommit": "^0.18.1",
+        "@aws-cdk/aws-codepipeline": "^0.18.1",
+        "@aws-cdk/aws-codepipeline-api": "^0.18.1",
+        "@aws-cdk/aws-iam": "^0.18.1",
         "@aws-cdk/cdk": "^0.18.1"
     }
 }
