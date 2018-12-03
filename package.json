@@ -15,6 +15,7 @@
     "awsLogin": "aws configure",
     "infrastructure:synth": "yarn workspace infrastructure synth",
     "infrastructure:diff:testing": "yarn workspace infrastructure diff:testing",
-    "infrastructure:diff:production": "yarn workspace infrastructure diff:production"
+    "infrastructure:diff:production": "yarn workspace infrastructure diff:production",
+    "pipelines:deploy:infrastructure": "yarn workspace pipelines deploy:infrastructure"
   }  
 }
