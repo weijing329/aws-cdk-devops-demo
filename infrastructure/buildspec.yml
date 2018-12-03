@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - cd infrastructure
-      - sudo apt-get update -y && sudo apt-get install -y yarn
+      - npm install -g yarn
       - yarn global add aws-cdk
       - yarn install --frozen-lockfile
   build:
