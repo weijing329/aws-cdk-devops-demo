@@ -3,15 +3,18 @@ version: 0.2
 phases:
   install:
     commands:
-      - cd infrastructure
       - npm install -g yarn
       - yarn global add aws-cdk
       - yarn install --frozen-lockfile
   build:
     commands:
-      - yarn synth
+      - yarn infrastructure:synth
 
 artifacts:
   files:
     - infrastructure/synth/*
   discard-paths: yes
+
+cache:
+  paths:
+    - 'node_modules/**/*'
